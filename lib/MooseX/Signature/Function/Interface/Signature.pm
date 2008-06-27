@@ -20,6 +20,22 @@ __END__
 
 MooseX::Signature::Function::Interface::Signature - Signature interface
 
+=head1 REQUIRED METHODS
+
+=over 4
+
+=item B<is_subset_of>
+
+=item B<validate_input>
+
+=item B<validate_output>
+
+=item B<get_input_parameters>
+
+=item B<get_output_parameters>
+
+=back
+
 =head1 BUGS
 
 Most software has bugs. This module probably isn't an exception.

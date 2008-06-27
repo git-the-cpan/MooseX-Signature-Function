@@ -16,6 +16,14 @@ __END__
 
 MooseX::Signature::Function::Interface::ParameterSet - Parameter set interface
 
+=head1 REQUIRED METHODS
+
+=over 4
+
+=item B<is_subset_of>
+
+=back
+
 =head1 BUGS
 
 Most software has bugs. This module probably isn't an exception.

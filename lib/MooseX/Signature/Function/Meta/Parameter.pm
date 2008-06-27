@@ -40,6 +40,16 @@ __END__
 
 MooseX::Signature::Function::Meta::Parameter - Parameter metaclass
 
+=head1 METHODS
+
+=over 4
+
+=item B<is_subset_of>
+
+=item B<validate>
+
+=back
+
 =head1 BUGS
 
 Most software has bugs. This module probably isn't an exception.

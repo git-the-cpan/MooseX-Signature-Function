@@ -78,6 +78,20 @@ __END__
 
 MooseX::Signature::Function::Meta::ParameterSet::Positional - Positional parameter set metaclass
 
+=head1 METHODS
+
+=over 4
+
+=item B<is_subset_of>
+
+=item B<validate>
+
+=item B<get_positional_parameters>
+
+=item B<is_strict>
+
+=back
+
 =head1 BUGS
 
 Most software has bugs. This module probably isn't an exception.

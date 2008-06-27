@@ -55,6 +55,20 @@ __END__
 
 MooseX::Signature::Function::Meta::Method - Method metaclass
 
+=head1 METHODS
+
+=over 4
+
+=item B<get_signature>
+
+=item B<get_real_body>
+
+=item B<get_input_parameters>
+
+=item B<get_output_parameters>
+
+=back
+
 =head1 BUGS
 
 Most software has bugs. This module probably isn't an exception.

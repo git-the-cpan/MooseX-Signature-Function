@@ -18,6 +18,14 @@ __END__
 
 MooseX::Signature::Function::Interface::ParameterSet::Positional - Positional parameter set interface
 
+=head1 REQUIRED METHODS
+
+=over 4
+
+=item B<get_positional_parameters>
+
+=back
+
 =head1 BUGS
 
 Most software has bugs. This module probably isn't an exception.

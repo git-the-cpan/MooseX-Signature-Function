@@ -18,6 +18,18 @@ __END__
 
 MooseX::Signature::Function::Interface::Method - Method interface
 
+=head1 REQUIRED METHODS
+
+=over 4
+
+=item B<get_signature>
+
+=item B<get_input_parameters>
+
+=item B<get_output_parameters>
+
+=back
+
 =head1 BUGS
 
 Most software has bugs. This module probably isn't an exception. 

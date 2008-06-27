@@ -16,7 +16,15 @@ __END__
 
 =head1 NAME
 
-MooseX::Signature::Function::Interface::ParameterSet::Positional - Positional parameter set interface
+MooseX::Signature::Function::Interface::ParameterSet::Named - Named parameter set interface
+
+=head1 REQUIRED METHODS
+
+=over 4
+
+=item B<get_named_parameters>
+
+=back
 
 =head1 BUGS
 

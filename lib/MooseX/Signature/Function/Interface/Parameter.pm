@@ -18,6 +18,18 @@ __END__
 
 MooseX::Signature::Function::Interface::Parameter - Parameter interface
 
+=head1 REQUIRED METHODS
+
+=over 4
+
+=item B<validate>
+
+=item B<is_subset_of>
+
+=item B<get_required>
+
+=back
+
 =head1 BUGS
 
 Most software has bugs. This module probably isn't an exception. 
