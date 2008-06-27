@@ -1,12 +1,9 @@
-package MooseX::Signature::Function::Interface::Signature::Named;
+package MooseX::Signature::Function::Interface::ParameterSet;
 
 use Moose::Role;
 
-with qw/MooseX::Signature::Function::Interface::Signature/;
-
 requires qw/
-  get_named_input
-  get_named_output
+  is_subset_of
   /;
 
 1;
@@ -17,7 +14,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Signature::Function::Interface::Signature::Positional - Positional signature interface
+MooseX::Signature::Function::Interface::ParameterSet - Parameter set interface
 
 =head1 BUGS
 

@@ -1,10 +1,11 @@
-package MooseX::Signature::Function::Interface::Signature::Combined;
+package MooseX::Signature::Function::Interface::ParameterSet::Positional;
 
 use Moose::Role;
 
-with qw/
-  MooseX::Signature::Function::Interface::Signature::Positional
-  MooseX::Signature::Function::Interface::Signature::Named
+with qw/MooseX::Signature::Function::Interface::ParameterSet/;
+
+requires qw/
+  get_positional_parameters
   /;
 
 1;
@@ -15,7 +16,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Signature::Function::Interface::Signature::Positional - Positional signature interface
+MooseX::Signature::Function::Interface::ParameterSet::Positional - Positional parameter set interface
 
 =head1 BUGS
 

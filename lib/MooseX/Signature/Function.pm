@@ -3,7 +3,7 @@ package MooseX::Signature::Function;
 use strict;
 use warnings;
 
-our $VERSION = '0.00_03';
+our $VERSION = '0.00_04';
 
 1;
 

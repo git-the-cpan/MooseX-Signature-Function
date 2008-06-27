@@ -4,6 +4,8 @@ use Moose::Role;
 
 requires qw/
   get_signature
+  get_input_parameters
+  get_output_parameters
   /;
 
 1;

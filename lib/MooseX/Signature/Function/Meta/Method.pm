@@ -41,6 +41,10 @@ sub get_signature { $_[0]->{'$!signature'} }
 
 sub get_real_body { $_[0]->{'&!real_body'} }
 
+sub get_input_parameters { $_[0]->get_signature->get_input_parameters }
+
+sub get_output_parameters { $_[0]->get_signature->get_output_parameters }
+
 1;
 
 __END__

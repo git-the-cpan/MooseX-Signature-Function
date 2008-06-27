@@ -1,11 +1,11 @@
-package MooseX::Signature::Function::Meta::Signature::Positional;
+package MooseX::Signature::Function::Meta::ParameterSet::Positional;
 
 use Moose;
 
 use MooseX::Signature::Function::Exception;
 use Scalar::Util qw/blessed/;
 
-with qw/MooseX::Signature::Function::Interface::Signature::Positional/;
+with qw/MooseX::Signature::Function::Interface::ParameterSet::Positional/;
 
 has 'strict' => (
   isa      => 'Bool',
@@ -13,39 +13,21 @@ has 'strict' => (
   default  => 0,
 );
 
-has 'positional_input' => (
+has 'positional_parameters' => (
   isa      => 'ArrayRef',
   required => 1,
   default  => sub { [] },
 );
 
-has 'positional_output' => (
-  isa      => 'ArrayRef',
-  required => 1,
-  default  => sub { [] },
-);
-
-sub validate_input {
+sub validate {
   my ($self,@arguments) = @_;
-  
-  return $self->_validate ($self->get_positional_input,@arguments);
-}
-
-sub validate_output {
-  my ($self,@arguments) = @_;
-  
-  return $self->_validate ($self->get_positional_output,@arguments);
-}
-
-sub _validate {
-  my ($self,$parameters,@arguments) = @_;
 
   my @new_arguments;
 
   my $parameter_count = 0;
 
   eval {
-    while (my $parameter = $parameters->[$parameter_count]) {
+    while (my $parameter = $self->{positional_parameters}->[$parameter_count]) {
       if (scalar @arguments) {
         my $argument = shift @arguments;
 
@@ -82,9 +64,9 @@ sub is_subset_of {
   return 1;
 }
 
-sub get_positional_input { $_[0]->{positional_input} }
+sub is_strict { $_[0]->{strict} }
 
-sub get_positional_output { $_[0]->{positional_output} }
+sub get_positional_parameters { $_[0]->{positional_input} }
 
 1;
 
@@ -94,7 +76,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Signature::Function::Meta::Signature::Positional - Positional signature metaclass
+MooseX::Signature::Function::Meta::ParameterSet::Positional - Positional parameter set metaclass
 
 =head1 BUGS
 

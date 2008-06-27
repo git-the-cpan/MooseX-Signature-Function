@@ -1,14 +1,12 @@
-package MooseX::Signature::Function::Interface::Signature;
+package MooseX::Signature::Function::Meta::ParameterSet::Null;
 
-use Moose::Role;
+use Moose;
 
-requires qw/
-  is_subset_of
-  validate_input
-  validate_output
-  get_input_parameters
-  get_output_parameters
-  /;
+with qw/MooseX::Signature::Function::Interface::ParameterSet/;
+
+sub validate { shift; return @_ }
+
+sub is_subset_of { 1 }
 
 1;
 
@@ -18,7 +16,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Signature::Function::Interface::Signature - Signature interface
+MooseX::Signature::Function::Meta::ParameterSet::Null - Null parameter set metaclass
 
 =head1 BUGS
 
