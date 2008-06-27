@@ -19,4 +19,4 @@ no_index:
 requires: 
   Moose: 0.50
   Scalar::Util: 1.19
-version: 0.00_02
+version: 0.00_03

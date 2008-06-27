@@ -1,11 +1,10 @@
-package MooseX::Signature::Function::Interface::Signature;
+package MooseX::Signature::Function::Interface::Signature::Combined;
 
 use Moose::Role;
 
-requires qw/
-  is_subset_of
-  validate_input
-  validate_output
+with qw/
+  MooseX::Signature::Function::Interface::Signature::Positional
+  MooseX::Signature::Function::Interface::Signature::Named
   /;
 
 1;
@@ -16,7 +15,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Signature::Function::Interface::Signature - Signature interface
+MooseX::Signature::Function::Interface::Signature::Positional - Positional signature interface
 
 =head1 BUGS
 

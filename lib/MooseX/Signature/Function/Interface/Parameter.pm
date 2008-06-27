@@ -3,6 +3,7 @@ package MooseX::Signature::Function::Interface::Parameter;
 use Moose::Role;
 
 requires qw/
+  is_subset_of
   get_required
   validate
   /;

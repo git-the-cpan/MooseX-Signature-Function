@@ -11,6 +11,9 @@ lib/MooseX/Signature/Function/Exception.pm
 lib/MooseX/Signature/Function/Interface/Method.pm
 lib/MooseX/Signature/Function/Interface/Parameter.pm
 lib/MooseX/Signature/Function/Interface/Signature.pm
+lib/MooseX/Signature/Function/Interface/Signature/Combined.pm
+lib/MooseX/Signature/Function/Interface/Signature/Named.pm
+lib/MooseX/Signature/Function/Interface/Signature/Positional.pm
 lib/MooseX/Signature/Function/Meta/Method.pm
 lib/MooseX/Signature/Function/Meta/Parameter.pm
 lib/MooseX/Signature/Function/Meta/Signature/Positional.pm

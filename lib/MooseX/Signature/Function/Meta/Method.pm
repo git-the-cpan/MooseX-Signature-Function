@@ -20,7 +20,7 @@ around wrap => sub {
     my $validator = sub {
       my $method_self = shift;
 
-      @_ = ($method_self,$signature->validate (@_));
+      @_ = ($method_self,$signature->validate_input (@_));
 
       goto $code;
     };

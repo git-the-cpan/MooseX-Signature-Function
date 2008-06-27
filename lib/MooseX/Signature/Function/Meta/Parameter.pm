@@ -22,6 +22,14 @@ sub validate {
   return $value;
 }
 
+sub is_subset_of {
+  my ($self,$super) = @_;
+
+  return if $self->get_required && ! $super->get_required;
+
+  return 1;
+}
+
 1;
 
 __END__

@@ -24,7 +24,7 @@ plan tests => 6;
 # signature, introspection
 
 {
-  my $signature = MooseX::Signature::Function::Meta::Signature::Positional->new (parameter_list => [
+  my $signature = MooseX::Signature::Function::Meta::Signature::Positional->new (positional_input => [
       MooseX::Signature::Function::Meta::Parameter->new (required => 1),
     ],
   );

@@ -2,9 +2,10 @@ package MooseX::Signature::Function::Meta::Signature::Positional;
 
 use Moose;
 
+use MooseX::Signature::Function::Exception;
 use Scalar::Util qw/blessed/;
 
-with qw/MooseX::Signature::Function::Interface::Signature/;
+with qw/MooseX::Signature::Function::Interface::Signature::Positional/;
 
 has 'strict' => (
   isa      => 'Bool',
@@ -12,21 +13,39 @@ has 'strict' => (
   default  => 0,
 );
 
-has 'parameter_list' => (
+has 'positional_input' => (
   isa      => 'ArrayRef',
   required => 1,
   default  => sub { [] },
 );
 
-sub validate {
+has 'positional_output' => (
+  isa      => 'ArrayRef',
+  required => 1,
+  default  => sub { [] },
+);
+
+sub validate_input {
   my ($self,@arguments) = @_;
+  
+  return $self->_validate ($self->get_positional_input,@arguments);
+}
+
+sub validate_output {
+  my ($self,@arguments) = @_;
+  
+  return $self->_validate ($self->get_positional_output,@arguments);
+}
+
+sub _validate {
+  my ($self,$parameters,@arguments) = @_;
 
   my @new_arguments;
 
   my $parameter_count = 0;
 
   eval {
-    while (my $parameter = $self->{parameter_list}->[$parameter_count]) {
+    while (my $parameter = $parameters->[$parameter_count]) {
       if (scalar @arguments) {
         my $argument = shift @arguments;
 
@@ -47,10 +66,25 @@ sub validate {
     }
   }
 
-  push @new_arguments,(@arguments) unless $self->{strict};
+  if ($self->{strict}) {
+    MooseX::Signature::Function::Exception->throw ("Too many arguments")
+      if scalar @arguments;
+  } else {
+    push @new_arguments,(@arguments);
+  }
 
   return @new_arguments;
 }
+
+sub is_subset_of {
+  my ($self,$super) = @_;
+
+  return 1;
+}
+
+sub get_positional_input { $_[0]->{positional_input} }
+
+sub get_positional_output { $_[0]->{positional_output} }
 
 1;
 
