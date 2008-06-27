@@ -1,0 +1,24 @@
+inc/Module/Install.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/Can.pm
+inc/Module/Install/Fetch.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/Win32.pm
+inc/Module/Install/WriteAll.pm
+lib/MooseX/Signature/Function.pm
+lib/MooseX/Signature/Function/Exception.pm
+lib/MooseX/Signature/Function/Interface/Method.pm
+lib/MooseX/Signature/Function/Interface/Parameter.pm
+lib/MooseX/Signature/Function/Interface/Signature.pm
+lib/MooseX/Signature/Function/Meta/Method.pm
+lib/MooseX/Signature/Function/Meta/Parameter.pm
+lib/MooseX/Signature/Function/Meta/Signature/Positional.pm
+Makefile.PL
+MANIFEST			This list of files
+META.yml
+t/000_use.t
+t/200_meta_parameter.t
+t/300_meta_signature_positional.t
+t/400_meta_method.t
+t/pod.t
